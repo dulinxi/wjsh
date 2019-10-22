@@ -2,6 +2,11 @@
 
 > 万家生活-这才是你要的生活
 
+> This project base on vue.js and nuxt.js . the two javascript framework is very awesome and helpful. thanks for these framework's author.
+
+
+For look the project running face, please check out [www.wjsh.com](http://www.wjsh.com).
+
 ## Build Setup
 
 ``` bash
@@ -19,4 +24,3 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

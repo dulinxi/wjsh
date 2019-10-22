@@ -1,13 +1,12 @@
 <template>
-  <div class="container">
+  <main class="main container">
     <section class="banner"></section>
-    <div>
-      <logo />
+    <div class="center">
       <h1 class="title">万家生活</h1>
       <h2 class="subtitle">这才是你要的生活</h2>
       <p>wjsh.com即将来临，敬请期待</p>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -25,6 +24,9 @@ export default {
     height: 300px;
     background: orangered;
   }
+}
+.main {
+  text-align: center;
 }
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,

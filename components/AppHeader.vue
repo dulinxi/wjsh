@@ -1,9 +1,9 @@
 <template>
   <header class="app-header">
     <div class="container">
-      <div>
-        <nuxt-link to="/">万家生活</nuxt-link>
-      </div>
+      <nuxt-link class="brand" to="/">
+        <logo class="site-logo" /><span>万家生活</span>
+      </nuxt-link>
       <nav>
         <ul class="navigation" role="navigation">
           <li>
@@ -37,6 +37,17 @@
   display: flex;
   border-bottom: #f0f0f0 solid 1px;
   background: #fff;
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  .site-logo {
+    width: 50px;
+    height: 50px;
+  }
   .container {
     padding: 0 10px;
     display: flex;

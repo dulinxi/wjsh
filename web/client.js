@@ -38,7 +38,7 @@ Object.assign(Vue.config, {"silent":false,"performance":true})
 const logs = NUXT.logs || []
   if (logs.length > 0) {
   const ssrLogSyle = 'background: #2E495E;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5em;'
-  console.group && console.group  ("%cNuxt SSR", ssrLogSyle)
+  console.group && console.group ("%cNuxt SSR", ssrLogSyle)
   logs.forEach(logObj => (console[logObj.type] || console.log)(...logObj.args))
   delete NUXT.logs
   console.groupEnd && console.groupEnd()

@@ -4,9 +4,13 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 .logo {
   display: inline-block;
   position: relative;
+  img {
+    width: auto;
+    height: 100%;
+  }
 }
 </style>
