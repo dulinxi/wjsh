@@ -13,22 +13,22 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/axios": "^5.7.1",
     "express": "^4.16.4",
     "moment": "^2.24.0",
-    "nuxt": "^2.10.1",
-    "popper.js": "^1.15.0"
+    "nuxt": "^2.10.2",
+    "popper.js": "^1.16.0"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.27",
-    "autoprefixer": "^9.6.4",
+    "autoprefixer": "^9.6.5",
     "babel-jest": "^24.1.0",
     "cross-env": "^5.2.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-prettier": "^3.1.1",
     "jest": "^24.1.0",
     "node-sass": "^4.12.0",
-    "nodemon": "^1.19.3",
+    "nodemon": "^1.19.4",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.16.4",
     "sass-loader": "^7.3.1",
