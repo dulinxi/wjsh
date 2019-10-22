@@ -15,10 +15,20 @@ export default class Mysql {
         // 创建连接
         this.connection.connect((err) => {
             if (err) {
-                console.log('mysql connect fail');
+                console.log('[mysql connect] fail');
                 return;
             }
-            console.log('mysql conect success');
+            console.log('[mysql conect] success');
+        });
+    }
+    query(querString) {
+        // 执行sql语句
+        this.connection.query(querString, function (err, rows, fields) {
+            if (err) {
+                console.log('[query] - :' + err);
+                return;
+            }
+            console.log('The solution is: ', rows[0].solution);
         });
     }
     end() {
