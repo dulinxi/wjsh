@@ -1,6 +1,8 @@
 <template>
   <main class="main container">
-    <section class="banner"></section>
+    <section style="height: 300px;">
+      <RichEditor />
+    </section>
     <div class="center">
       <h1 class="title">万家生活</h1>
       <h2 class="subtitle">这才是你要的生活</h2>
@@ -20,6 +22,7 @@ export default {
 
 <style lang="scss">
 .container {
+  margin-top: 10px;
   .banner {
     height: 300px;
     background: orangered;
