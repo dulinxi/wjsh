@@ -3,9 +3,9 @@
     <section style="height: 300px;">
       <RichEditor />
     </section>
-    <div class="center" style="margin-top: 20px">
+    <div style="margin-top: 20px">
       <el-row>
-        <el-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">
+        <el-col :span="6">
           <el-card class="image-card" :body-style="{ padding: '0px' }">
             <img
               src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
@@ -14,11 +14,21 @@
             <div style="padding: 14px;">
               <span>好吃的汉堡</span>
               <div class="bottom clearfix">
-                <time class="time">{{ new Date() }}</time>
-                <el-button type="text" class="button">操作按钮</el-button>
+                <time
+                  class="time"
+                  style="font-size: 12px;"
+                >{{ date | DateFormat('YYYY-MM-DD HH:mm:ss') }}</time>
+                <div>
+                  <i class="el-icon-view"></i>
+                  <span style="font-size: 12px;">253已购买</span>
+                </div>
+                <el-button type="text" class="button">去购买</el-button>
               </div>
             </div>
           </el-card>
+        </el-col>
+        <el-col :span="6" :offset="2">
+          <el-date-picker v-model="date" type="date" placeholder="选择日期"></el-date-picker>
         </el-col>
       </el-row>
       <el-row>
@@ -31,30 +41,37 @@
       </el-row>
 
       <el-row>
-        <el-button plain>朴素按钮</el-button>
-        <el-button type="primary" plain>主要按钮</el-button>
-        <el-button type="success" plain>成功按钮</el-button>
-        <el-button type="info" plain>信息按钮</el-button>
-        <el-button type="warning" plain>警告按钮</el-button>
-        <el-button type="danger" plain>危险按钮</el-button>
+        <el-button plain size="medium">朴素按钮</el-button>
+        <el-button type="primary" plain size="medium">主要按钮</el-button>
+        <el-button type="success" plain size="medium">成功按钮</el-button>
+        <el-button type="info" plain size="medium">信息按钮</el-button>
+        <el-button type="warning" plain size="medium">警告按钮</el-button>
+        <el-button type="danger" plain size="medium">危险按钮</el-button>
       </el-row>
 
       <el-row>
-        <el-button round>圆角按钮</el-button>
-        <el-button type="primary" round>主要按钮</el-button>
-        <el-button type="success" round>成功按钮</el-button>
-        <el-button type="info" round>信息按钮</el-button>
-        <el-button type="warning" round>警告按钮</el-button>
-        <el-button type="danger" round>危险按钮</el-button>
+        <el-button round size="mini">圆角按钮</el-button>
+        <el-button type="primary" round size="mini">主要按钮</el-button>
+        <el-button type="success" round size="mini">成功按钮</el-button>
+        <el-button type="info" round size="mini">信息按钮</el-button>
+        <el-button type="warning" round size="mini">警告按钮</el-button>
+        <el-button type="danger" round size="mini">危险按钮</el-button>
       </el-row>
 
       <el-row>
-        <el-button icon="el-icon-search" circle></el-button>
-        <el-button type="primary" icon="el-icon-edit" circle></el-button>
-        <el-button type="success" icon="el-icon-check" circle></el-button>
-        <el-button type="info" icon="el-icon-message" circle></el-button>
-        <el-button type="warning" icon="el-icon-star-off" circle></el-button>
-        <el-button type="danger" icon="el-icon-delete" circle></el-button>
+        <el-button icon="el-icon-search" circle size="small"></el-button>
+        <el-button type="primary" icon="el-icon-edit" circle size="small"></el-button>
+        <el-button type="success" icon="el-icon-check" circle size="small"></el-button>
+        <el-button type="info" icon="el-icon-message" circle size="small"></el-button>
+        <el-button type="warning" icon="el-icon-star-off" circle size="small"></el-button>
+        <el-button type="danger" icon="el-icon-delete" circle size="small"></el-button>
+      </el-row>
+
+      <el-row>
+        <el-button :plain="true" @click="open2">成功</el-button>
+        <el-button :plain="true" @click="open3">警告</el-button>
+        <el-button :plain="true" @click="open1">消息</el-button>
+        <el-button :plain="true" @click="open4">错误</el-button>
       </el-row>
     </div>
   </main>
@@ -63,7 +80,31 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      date: new Date()
+    };
+  },
+  methods: {
+    open1() {
+      this.$message('这是一条消息提示');
+    },
+    open2() {
+      this.$message({
+        message: '恭喜你，这是一条成功消息',
+        type: 'success'
+      });
+    },
+
+    open3() {
+      this.$message({
+        message: '警告哦，这是一条警告消息',
+        type: 'warning'
+      });
+    },
+
+    open4() {
+      this.$message.error('错了哦，这是一条错误消息');
+    }
   }
 };
 </script>
@@ -74,9 +115,6 @@ export default {
     height: 300px;
     background: orangered;
   }
-}
-.main {
-  text-align: center;
 }
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
