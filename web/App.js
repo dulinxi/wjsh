@@ -6,6 +6,8 @@ import {
   globalHandleError
 } from './utils'
 
+import '..\\assets\\scss\\custom-element\\index.scss'
+
 import '..\\assets\\scss\\global.scss'
 
 import _6f6c098b from '..\\layouts\\default.vue'

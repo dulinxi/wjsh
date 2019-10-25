@@ -40,6 +40,7 @@ module.exports = {
   ** 公共css
   */
   css: [
+    '~/assets/scss/custom-element/index.scss',
     '~/assets/scss/global.scss'
   ],
   /*
@@ -54,10 +55,11 @@ module.exports = {
   **  挂载到APP之前引用的插件, 在此注册了公共的组件、指令、过滤器
   */
   plugins: [
-    '~/plugins/global-components.js',
-    '~/plugins/directives.js',
-    '~/plugins/filters.js',
-    '~/plugins/mixins.js'
+    '~/plugins/element-ui',
+    '~/plugins/global-components',
+    '~/plugins/directives',
+    '~/plugins/filters',
+    '~/plugins/mixins'
   ],
   /*
   ** Nuxt.js dev-modules

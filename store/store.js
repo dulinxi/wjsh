@@ -5,6 +5,7 @@ export const mutations = {
 }
 
 export const actions = {
-  nuxtServerInit({ commit }, { req }) {x
+  nuxtServerInit({ commit }, { req }) {
+    
   },
 }

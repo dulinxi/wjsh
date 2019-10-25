@@ -37,6 +37,8 @@
   display: flex;
   border-bottom: #f0f0f0 solid 1px;
   background: #fff;
+  margin-bottom: 10px;
+  z-index: 100;
   .brand {
     display: flex;
     align-items: center;
