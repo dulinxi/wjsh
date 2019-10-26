@@ -19,10 +19,19 @@
                   style="font-size: 12px;"
                 >{{ date | DateFormat('YYYY-MM-DD HH:mm:ss') }}</time>
                 <div>
-                  <i class="el-icon-view"></i>
-                  <span style="font-size: 12px;">253已购买</span>
+                  <el-popover
+                    placement="top-start"
+                    title="标题"
+                    width="200"
+                    trigger="hover"
+                    content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。"
+                  >
+                    <el-button type="text" slot="reference">
+                      <i class="el-icon-view"></i>253已购买
+                    </el-button>
+                  </el-popover>
                 </div>
-                <el-button type="text" class="button">去购买</el-button>
+                <el-button type="text" class="button" @click="dialogVisible = true">去购买 Dialog</el-button>
               </div>
             </div>
           </el-card>
@@ -73,6 +82,22 @@
         <el-button :plain="true" @click="open1">消息</el-button>
         <el-button :plain="true" @click="open4">错误</el-button>
       </el-row>
+
+      <el-row>
+        <el-table :data="tableData" border style="width: 100%">
+          <el-table-column prop="date" label="日期" width="180"></el-table-column>
+          <el-table-column prop="name" label="姓名" width="180"></el-table-column>
+          <el-table-column prop="address" label="地址"></el-table-column>
+        </el-table>
+      </el-row>
+
+      <el-dialog title="提示" :visible.sync="dialogVisible" width="30%">
+        <span>这是一段信息</span>
+        <span slot="footer" class="dialog-footer">
+          <el-button type="text" @click="dialogVisible = false">取 消</el-button>
+          <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+        </span>
+      </el-dialog>
     </div>
   </main>
 </template>
@@ -81,7 +106,30 @@
 export default {
   data() {
     return {
-      date: new Date()
+      dialogVisible: false,
+      date: new Date(),
+      tableData: [
+        {
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄'
+        },
+        {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄'
+        },
+        {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄'
+        }
+      ]
     };
   },
   methods: {

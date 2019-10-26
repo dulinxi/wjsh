@@ -33,6 +33,7 @@
   @include e(header) {
     padding: $--dialog-padding-primary;
     padding-bottom: 10px;
+    border-bottom: 1px solid #e9ecef;
   }
 
   @include e(headerbtn) {
@@ -47,12 +48,12 @@
     font-size: $--message-close-size;
 
     .el-dialog__close {
-      color: $--color-info;
+      color: $--color-text-primary;
     }
 
     &:focus, &:hover {
       .el-dialog__close {
-        color: $--color-primary;
+        color: $--color-text-primary;
       }
     }
   }
