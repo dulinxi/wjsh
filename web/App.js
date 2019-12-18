@@ -15,7 +15,7 @@ import _6f6c098b from '..\\layouts\\default.vue'
 const layouts = { "_default": _6f6c098b }
 
 export default {
-  head: {"title":"万家生活","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"keywords","name":"keywords","content":"万家,生活网,美好生活,生活小工具,妙招,学习网,自学,文化旅游,绿水青山,小帮手"},{"hid":"description","name":"description","content":"万家生活网,致力于成为您生活的助手,提供生活中各种妙招,学习助手,或者带您领略大好河山,绿水青山的美景."}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+  head: {"title":"samehub","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"keywords","name":"keywords","content":"万家,生活网,美好生活,生活小工具,妙招,学习网,自学,文化旅游,绿水青山,小帮手"},{"hid":"description","name":"description","content":"万家生活网,致力于成为您生活的助手,提供生活中各种妙招,学习助手,或者带您领略大好河山,绿水青山的美景."}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
 
   render (h, props) {
     const layoutEl = h(this.layout || 'nuxt')
@@ -24,7 +24,7 @@ export default {
         id: '__layout'
       },
       key: this.layoutName
-    }, [ layoutEl ])
+    }, [layoutEl])
 
     const transitionEl = h('transition', {
       props: {
@@ -39,7 +39,7 @@ export default {
           })
         }
       }
-    }, [ templateEl ])
+    }, [templateEl])
 
     return h('div', {
       domProps: {

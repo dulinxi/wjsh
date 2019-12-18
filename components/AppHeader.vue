@@ -2,7 +2,7 @@
   <header class="app-header">
     <div class="container">
       <nuxt-link class="brand" to="/">
-        <logo class="site-logo" /><span>万家生活</span>
+        <logo class="site-logo" /><span>知识库</span>
       </nuxt-link>
       <nav>
         <ul class="navigation" role="navigation">

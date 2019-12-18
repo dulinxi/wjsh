@@ -11,6 +11,13 @@ const _7fea7826 = () => interopDefault(import('..\\pages\\tools\\index.vue' /* w
 const _7930c1b7 = () => interopDefault(import('..\\pages\\vision.vue' /* webpackChunkName: "pages_vision" */))
 const _63e6f853 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
+// TODO: remove in Nuxt 3
+const emptyFn = () => {}
+const originalPush = Router.prototype.push
+Router.prototype.push = function push (location, onComplete = emptyFn, onAbort) {
+  return originalPush.call(this, location, onComplete, onAbort)
+}
+
 Vue.use(Router)
 
 export const routerOptions = {

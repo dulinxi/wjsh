@@ -39,7 +39,7 @@ Object.assign(Vue.config, {"silent":false,"performance":true})
 const logs = NUXT.logs || []
   if (logs.length > 0) {
   const ssrLogSyle = 'background: #2E495E;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5em;'
-  console.group && console.group ("%cNuxt SSR", ssrLogSyle)
+  console.group && console.group ('%cNuxt SSR', ssrLogSyle)
   logs.forEach(logObj => (console[logObj.type] || console.log)(...logObj.args))
   delete NUXT.logs
   console.groupEnd && console.groupEnd()
@@ -255,10 +255,11 @@ async function render (to, from, next) {
     }
 
     // Load layout for error page
+    const errorLayout = (NuxtError.options || NuxtError).layout
     const layout = await this.loadLayout(
-      typeof NuxtError.layout === 'function'
-        ? NuxtError.layout(app.context)
-        : NuxtError.layout
+      typeof errorLayout === 'function'
+        ? errorLayout.call(NuxtError, app.context)
+        : errorLayout
     )
 
     await callMiddleware.call(this, Components, app.context, layout)
@@ -267,7 +268,7 @@ async function render (to, from, next) {
     }
 
     // Show error page
-    app.context.error({ statusCode: 404, message: `This page could not be found` })
+    app.context.error({ statusCode: 404, message: 'This page could not be found' })
     return next()
   }
 
@@ -333,7 +334,7 @@ async function render (to, from, next) {
 
     // ...If .validate() returned false
     if (!isValid) {
-      this.error({ statusCode: 404, message: `This page could not be found` })
+      this.error({ statusCode: 404, message: 'This page could not be found' })
       return next()
     }
 
@@ -413,7 +414,7 @@ async function render (to, from, next) {
     globalHandleError(error)
 
     // Load error layout
-    let layout = NuxtError.layout
+    let layout = (NuxtError.options || NuxtError).layout
     if (typeof layout === 'function') {
       layout = layout(app.context)
     }
@@ -446,7 +447,7 @@ function showNextPage (to) {
 
   // Set layout
   let layout = this.$options.nuxt.err
-    ? NuxtError.layout
+    ? (NuxtError.options || NuxtError).layout
     : to.matched[0].components.default.options.layout
 
   if (typeof layout === 'function') {
