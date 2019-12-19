@@ -7,6 +7,9 @@
       <nav>
         <ul class="navigation" role="navigation">
           <li>
+            <nuxt-link class="link" to="/">首页</nuxt-link>
+          </li>
+          <li>
             <nuxt-link class="link" to="/life">生活</nuxt-link>
           </li>
           <li>
@@ -21,12 +24,35 @@
           <li>
             <nuxt-link class="link" to="/tools">常用工具</nuxt-link>
           </li>
+          <li>
+            <el-input
+              placeholder="搜索"
+              suffix-icon="el-icon-search"
+              v-model="keywords"
+              @keyup.native.enter="search"
+            >
+            </el-input>
+          </li>
         </ul>
       </nav>
       <div>登录/注册</div>
     </div>
   </header>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      keywords: ''
+    };
+  },
+  methods: {
+    search() {
+      console.log(this.keywords);
+    }
+  }
+};
+</script>
 <style lang="scss">
 .app-header {
   position: fixed;
@@ -60,6 +86,7 @@
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
     list-style: none;
     .link {
       padding: 10px 20px;

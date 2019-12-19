@@ -55,9 +55,6 @@ module.exports = {
     linkExactActiveClass: 'active'
     // middleware: 'header'
   },
-  serverMiddleware: {
-    '/api': '~/api/index.js'
-  },
   /*
    **  挂载到APP之前引用的插件, 在此注册了公共的组件、指令、过滤器
    */
